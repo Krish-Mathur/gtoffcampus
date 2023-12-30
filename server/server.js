@@ -9,6 +9,15 @@ app.use(require("./routes/record"));
 // get driver connection
 const dbo = require("./db/conn");
 
+const bodyParser = requre('body-parser');
+app.use(bodyParser.json());
+app.post('/questionnaire', (req, res) => {
+  const formData = req.body;
+  console.log('This what we got', formData);
+  res.sendStatus(200);
+});
+
+
 app.listen(port, async () => {
   // perform a database connection when server starts
   await dbo.connectToServer(function (err) {
