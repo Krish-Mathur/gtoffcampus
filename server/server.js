@@ -15,6 +15,8 @@ const dbo = require("./db/conn");
 
 // Handle POST request for /questionnaire
 app.post('/questionnaire', (req, res) => {
+  const formData = req.body;
+  console.log('This is what we got', formData);
   // Here, you can perform database operations or other processing with formData
   res.json({ success: true });
 });
